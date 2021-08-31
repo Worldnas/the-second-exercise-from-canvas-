@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<style>
+	#canvas{border: 1em dotted #E21014;}
+</style>
+<meta charset="utf-8">
+<title>canvas training</title>
+</head>
+
+<body>
+<canvas width="500px" height="500px" id="canvas"></canvas>
+<script>
+	var img=new Image();
+	var c=document.getElementById("canvas");
+	var x=c.getContext("2d");
+	img.onload= function(){
+		x.drawImage(img,0,0);
+		x.beginPath();
+		/*x.fillStyle="aqua";
+		x.lineJoin="round";
+		x.lineWidth="10";
+		x.lineCap="round";
+		x.strokeStyle="black";
+		x.moveTo(50,50);
+		x.lineTo(50,200);
+		x.lineTo(400,200);
+		x.lineTo(400,50);
+		x.lineTo(50,50);*/
+		x.fill();
+		x.stroke();
+	}
+	x.scale(2,2);
+	x.rotate(myfun(-10))
+	img.src="img.png";
+	function myfun(d){var r=((d*Math.PI)/180);return r}
+</script>
+</body>
+</html>
